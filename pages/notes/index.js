@@ -1,4 +1,4 @@
-import { Heading, SimpleGrid } from "@chakra-ui/react"
+import { SimpleGrid } from "@chakra-ui/react"
 import Link from "next/link"
 import NoteCard from "../../components/NoteCard"
 import PageHeader from "../../components/PageHeader"

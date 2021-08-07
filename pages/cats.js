@@ -1,11 +1,5 @@
-import {
-    Button,
-    Center,
-    Container,
-    Image,
-    SimpleGrid,
-    Spinner,
-} from "@chakra-ui/react"
+import Image from "next/image"
+import { Button, Center, SimpleGrid, Spinner } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
 import PageHeader from "../components/PageHeader"
 import MainLayout from "../layouts/MainLayout"
@@ -31,11 +25,11 @@ export default function Cats() {
     }
 
     const LoadMoreCats = async () => {
-        setLoading(true);
+        setLoading(true)
         const newCats = await fetchCats(6, page)
         setPage((prevPage) => prevPage + 1)
         setCats((prevCats) => [...prevCats, ...newCats])
-        setLoading(false);
+        setLoading(false)
     }
 
     useEffect(async () => {
@@ -58,7 +52,8 @@ export default function Cats() {
                         <Image
                             key={index}
                             src={cat.url}
-                            boxSize="250px"
+                            width="250px"
+                            height="250px"
                             objectFit="cover"
                         />
                     ))}

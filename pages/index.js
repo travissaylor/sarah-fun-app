@@ -1,4 +1,5 @@
 import { Button } from "@chakra-ui/react"
+import Link from "next/link"
 import IllustratedHero, { Illustration } from "../components/IllustratedHero"
 import MainLayout from "../layouts/MainLayout"
 
@@ -16,20 +17,24 @@ export default function Home() {
                     />
                 }
                 highlightedButton={
-                    <Button
-                        rounded={"full"}
-                        px={6}
-                        colorScheme={"purple"}
-                        bg={"purple.400"}
-                        _hover={{ bg: "purple.500" }}
-                    >
-                        Get started
-                    </Button>
+                    <Link href="/notes">
+                        <Button
+                            rounded={"full"}
+                            px={6}
+                            colorScheme={"purple"}
+                            bg={"purple.400"}
+                            _hover={{ bg: "purple.500" }}
+                        >
+                            Read Notes
+                        </Button>
+                    </Link>
                 }
                 otherButton={
-                    <Button rounded={"full"} px={6}>
-                        Learn more
-                    </Button>
+                    <Link href="/cats">
+                        <Button rounded={"full"} px={6}>
+                            Cute Cats
+                        </Button>
+                    </Link>
                 }
             />
         </MainLayout>
