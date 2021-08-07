@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react"
+
 import {
     IconButton,
     Box,
@@ -8,17 +9,10 @@ import {
     useColorModeValue,
     Drawer,
     DrawerContent,
-    Text,
     useDisclosure,
 } from "@chakra-ui/react"
-import {
-    FiHome,
-    FiTrendingUp,
-    FiCompass,
-    FiStar,
-    FiSettings,
-    FiMenu,
-} from "react-icons/fi"
+
+import { FiHome, FiMenu } from "react-icons/fi"
 
 import { FaCat } from "react-icons/fa"
 
