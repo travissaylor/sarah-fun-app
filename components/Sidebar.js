@@ -16,7 +16,7 @@ import {
 import { FiHome, FiMenu } from "react-icons/fi"
 import { FaCat } from "react-icons/fa"
 import { CgNotes } from "react-icons/cg"
-import { ImOffice } from "react-icons/im"
+import { ImOffice, ImBooks } from "react-icons/im"
 
 import ColorModeSwitch from "./ColorModeSwitch"
 
@@ -25,6 +25,7 @@ const LinkItems = [
     { name: "Cats", route: "/cats", icon: FaCat },
     { name: "Notes", route: "/notes", icon: CgNotes },
     { name: "The Office", route: "/office", icon: ImOffice },
+    { name: "Marvel", route: "/marvel", icon: ImBooks },
 ]
 
 export default function Sidebar({ children }) {
