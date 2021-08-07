@@ -10,7 +10,7 @@ import { useEffect, useState } from "react"
 import PageHeader from "../components/PageHeader"
 import MainLayout from "../layouts/MainLayout"
 
-export default function cats() {
+export default function Cats() {
     const [cats, setCats] = useState([])
     const [page, setPage] = useState(0)
     const [loading, setLoading] = useState(true)
