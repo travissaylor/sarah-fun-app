@@ -16,7 +16,7 @@ export default function cats() {
     const [loading, setLoading] = useState(true)
 
     const fetchCats = async (limit = 12, page = 0) => {
-        const apiKey = "39abfcdd-6140-4c43-b5c9-02c549e0abe6"
+        const apiKey = process.env.NEXT_PUBLIC_CATS_API_KEY
         const url = new URL("https://api.thecatapi.com/v1/images/search")
         url.searchParams.set("limit", limit)
         url.searchParams.set("page", page)
@@ -66,7 +66,7 @@ export default function cats() {
             </Center>
 
             {loading ? (
-                <Center>
+                <Center m="8">
                     <Spinner />
                 </Center>
             ) : (
