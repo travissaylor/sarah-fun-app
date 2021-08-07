@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react"
+import Link from "next/link"
 
 import {
     IconButton,
@@ -13,15 +14,15 @@ import {
 } from "@chakra-ui/react"
 
 import { FiHome, FiMenu } from "react-icons/fi"
-
 import { FaCat } from "react-icons/fa"
+import { CgNotes } from "react-icons/cg"
 
-import Link from "next/link"
 import ColorModeSwitch from "./ColorModeSwitch"
 
 const LinkItems = [
     { name: "Home", route: "/", icon: FiHome },
     { name: "Cats", route: "/cats", icon: FaCat },
+    { name: "Notes", route: "/notes", icon: CgNotes },
 ]
 
 export default function Sidebar({ children }) {
