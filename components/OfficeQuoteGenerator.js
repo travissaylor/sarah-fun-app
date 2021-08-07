@@ -2,9 +2,11 @@ import {
     Button,
     Center,
     Container,
+    Flex,
     Heading,
     Spinner,
     Text,
+    VStack,
 } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
 
@@ -23,7 +25,10 @@ export default function OfficeQuoteGenerator() {
         setLoading(true)
         const newQuote = await fetchRandomQuote()
         setQuoteData(newQuote.data)
-        setLoading(false)
+
+        setTimeout(() => {
+            setLoading(false)
+        }, 300)
     }
 
     useEffect(async () => {
@@ -31,24 +36,34 @@ export default function OfficeQuoteGenerator() {
     }, [])
 
     return (
-        <Container maxW="xl" centerContent textAlign="center">
-            <Heading m="5">Random Quote Generator</Heading>
-            {!quoteData || loading ? (
-                <Center m="8">
-                    <Spinner />
-                </Center>
-            ) : (
-                <>
-                    <Text fontSize="xl">{quoteData.content}</Text>
-                    <Text fontSize="2xl">
-                        - {quoteData.character.firstname}{" "}
-                        {quoteData.character.lastname}
-                    </Text>
-                    <Button m="8" onClick={fetchAndSetQuoteData}>
+        <Container
+            maxW="xl"
+            minH="lg"
+            centerContent
+            textAlign="center"
+            pos="relative"
+        >
+            <Flex flex="1" direction="column" justifyContent="space-between">
+                <Heading m="5">Random Quote Generator</Heading>
+                {!quoteData || loading ? (
+                    <Center m="8">
+                        <Spinner />
+                    </Center>
+                ) : (
+                    <VStack>
+                        <Text fontSize="xl">{quoteData.content}</Text>
+                        <Text fontSize="2xl">
+                            - {quoteData.character.firstname}{" "}
+                            {quoteData.character.lastname}
+                        </Text>
+                    </VStack>
+                )}
+                <Container centerContent>
+                    <Button m="8" disabled={loading} onClick={fetchAndSetQuoteData}>
                         Load Another Quote
                     </Button>
-                </>
-            )}
+                </Container>
+            </Flex>
         </Container>
     )
 }

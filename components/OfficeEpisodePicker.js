@@ -2,9 +2,11 @@ import {
     Button,
     Center,
     Container,
+    Flex,
     Heading,
     Spinner,
     Text,
+    VStack,
 } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
 
@@ -22,9 +24,10 @@ export default function OfficeEpisodePicker() {
     const fetchAndSetEpisodeData = async () => {
         setLoading(true)
         const newEpisode = await fetchRandomEpisode()
-        console.log(newEpisode)
         setEpisodeData(newEpisode.data)
-        setLoading(false)
+        setTimeout(() => {
+            setLoading(false)
+        }, 300)
     }
 
     useEffect(async () => {
@@ -32,21 +35,35 @@ export default function OfficeEpisodePicker() {
     }, [])
 
     return (
-        <Container maxW="xl" centerContent textAlign="center">
-            <Heading m="5">Episode Picker</Heading>
-            {!episodeData || loading ? (
-                <Center m="8">
-                    <Spinner />
-                </Center>
-            ) : (
-                <>
-                    <Text fontSize="2xl">{episodeData.title}</Text>
-                    <Text fontSize="xl">{episodeData.description}</Text>
-                    <Button m="8" onClick={fetchAndSetEpisodeData}>
+        <Container
+            maxW="xl"
+            minH="lg"
+            centerContent
+            textAlign="center"
+            pos="relative"
+        >
+            <Flex flex="1" direction="column" justifyContent="space-between">
+                <Heading m="5">Episode Picker</Heading>
+                {!episodeData || loading ? (
+                    <Center m="8">
+                        <Spinner />
+                    </Center>
+                ) : (
+                    <VStack>
+                        <Text fontSize="3xl">{episodeData.title}</Text>
+                        <Text fontSize="xl">{episodeData.description}</Text>
+                    </VStack>
+                )}
+                <Container centerContent>
+                    <Button
+                        m="8"
+                        disabled={loading}
+                        onClick={fetchAndSetEpisodeData}
+                    >
                         Load Another Episode
                     </Button>
-                </>
-            )}
+                </Container>
+            </Flex>
         </Container>
     )
 }
