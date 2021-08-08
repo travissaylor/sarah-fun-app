@@ -13,20 +13,10 @@ import {
     useDisclosure,
 } from "@chakra-ui/react"
 
-import { FiHome, FiMenu } from "react-icons/fi"
-import { FaCat } from "react-icons/fa"
-import { CgNotes } from "react-icons/cg"
-import { ImOffice, ImBooks } from "react-icons/im"
+import { FiMenu } from "react-icons/fi"
 
 import ColorModeSwitch from "./ColorModeSwitch"
-
-const LinkItems = [
-    { name: "Home", route: "/", icon: FiHome },
-    { name: "Cats", route: "/cats", icon: FaCat },
-    { name: "Notes", route: "/notes", icon: CgNotes },
-    { name: "The Office", route: "/office", icon: ImOffice },
-    { name: "Marvel", route: "/marvel", icon: ImBooks },
-]
+import { LinkItems } from "../nav"
 
 export default function Sidebar({ children }) {
     const { isOpen, onOpen, onClose } = useDisclosure()

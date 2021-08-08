@@ -1,9 +1,24 @@
 import { Button } from "@chakra-ui/react"
+import { useRouter } from "next/dist/client/router"
 import Link from "next/link"
 import IllustratedHero, { Illustration } from "../components/IllustratedHero"
 import MainLayout from "../layouts/MainLayout"
+import { LinkItems } from "../nav"
 
 export default function Home() {
+    const router = useRouter()
+
+    const randomPageNavigator = () => {
+        let linkIsValidated = false
+        while (!linkIsValidated) {
+            const link = LinkItems[Math.floor(Math.random() * LinkItems.length)]
+            if (link.name !== "Home") {
+                linkIsValidated = true
+                router.push(link.route)
+            }
+        }
+    }
+
     return (
         <MainLayout title="Home">
             <IllustratedHero
@@ -30,11 +45,13 @@ export default function Home() {
                     </Link>
                 }
                 otherButton={
-                    <Link href="/cats">
-                        <Button rounded={"full"} px={6}>
-                            Cute Cats
-                        </Button>
-                    </Link>
+                    <Button
+                        onClick={randomPageNavigator}
+                        rounded={"full"}
+                        px={6}
+                    >
+                        I'm feeling Lucky
+                    </Button>
                 }
             />
         </MainLayout>
