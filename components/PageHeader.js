@@ -15,8 +15,8 @@ export default function PageHeader({ title, description = "" }) {
             <Stack
                 textAlign={"center"}
                 align={"center"}
-                spacing={{ base: 8, md: 10 }}
-                py={{ base: 20, md: 28 }}
+                spacing={{ base: 4, md: 5 }}
+                py={{ base: 10, md: 14}}
             >
                 <Heading
                     fontWeight={600}
