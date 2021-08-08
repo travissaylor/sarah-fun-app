@@ -50,7 +50,7 @@ export default function Home() {
                         rounded={"full"}
                         px={6}
                     >
-                        I'm feeling Lucky
+                        I&#39;m feeling Lucky
                     </Button>
                 }
             />
