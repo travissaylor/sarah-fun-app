@@ -14,16 +14,7 @@ export default function Notes({ notes }) {
             />
             <SimpleGrid columns={[1, null, 2, null, 3]} spacing="40px">
                 {notes.map((note, index) => (
-                    <Link key={index} href={`/notes/${note.slug}`}>
-                        <div>
-                            <NoteCard
-                                note={note}
-                                title={note.title}
-                                description={note.excerpt}
-                                author={note.author}
-                            />
-                        </div>
-                    </Link>
+                    <NoteCard key={index} note={note} />
                 ))}
             </SimpleGrid>
         </MainLayout>
@@ -38,6 +29,7 @@ export async function getStaticProps() {
         "author",
         "coverImage",
         "excerpt",
+        "tag"
     ])
 
     return {

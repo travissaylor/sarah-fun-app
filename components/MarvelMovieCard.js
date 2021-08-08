@@ -73,7 +73,7 @@ export default function MarvelMovieCard({ movie }) {
                         {movie.directed_by || "Director TBA"}
                     </Text>
                     <Text color={"gray.500"}>
-                        {releaseData ? releaseData.toDateString() : "TBA"} ·{" "}
+                        {releaseData ? `${releaseData.getUTCMonth() + 1}/${releaseData.getUTCDate()}/${releaseData.getUTCFullYear()}` : "TBA"} ·{" "}
                         {movie.duration || "TBA"} mins
                     </Text>
                 </Flex>
