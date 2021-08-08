@@ -5,7 +5,7 @@ coverImage: "/notes/noteImage-loveReminder.jpeg"
 date: "2019-12-21T05:35:07.322Z"
 author:
     name: Travis Saylor
-    picture: "travis_headshot.jpeg"
+    picture: "/travis_headshot.jpeg"
 ogImage:
     url: "/notes/noteImage-loveReminder.jpeg"
 tag: "Love"
