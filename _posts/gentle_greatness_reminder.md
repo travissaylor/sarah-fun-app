@@ -2,7 +2,7 @@
 title: "A Gentle Reminder of How Great You Are"
 excerpt: "I know its been a tough few weeks for you with your summer course in full swing. Even though it has felt like a struggle, I've seen growth in you throughout the process."
 coverImage: "https://images.unsplash.com/photo-1555081944-c0c2f00d06e8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format"
-date: "2021-08-08 23:30:53"
+date: "2021-08-08 03:30:53"
 author:
     name: Travis Saylor
     picture: "/travis_headshot.jpeg"
