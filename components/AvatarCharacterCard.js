@@ -12,7 +12,10 @@ import {
 } from "@chakra-ui/react"
 import Image from "next/image"
 
-export default function AvatarCharacterCard({ character, loadAnotherCharacter }) {
+export default function AvatarCharacterCard({
+    character,
+    loadAnotherCharacter,
+}) {
     return (
         <Center py={6}>
             <Flex
@@ -60,6 +63,11 @@ export default function AvatarCharacterCard({ character, loadAnotherCharacter })
                     >
                         {character?.name}
                     </Heading>
+                    {character?.position && (
+                        <Text my={2} fontSize="xl">
+                            {character.position}
+                        </Text>
+                    )}
                     <SimpleGrid columns={2}>
                         {character?.gender && (
                             <Text my={2}>
@@ -83,9 +91,15 @@ export default function AvatarCharacterCard({ character, loadAnotherCharacter })
                                 </Text>
                             </Text>
                         )}
+                        {character?.hair && (
+                            <Text my={2}>
+                                Hair:{" "}
+                                <Text color={"gray.500"}>{character.hair}</Text>
+                            </Text>
+                        )}
                         {character?.allies && character.allies.length > 0 && (
-                            <Box>
-                                <Text my={2}>Allies:</Text>
+                            <Box my={2}>
+                                <Text>Allies:</Text>
                                 {character.allies.map((ally, index) => (
                                     <Text key={index} color={"gray.500"}>
                                         {ally}
@@ -97,8 +111,8 @@ export default function AvatarCharacterCard({ character, loadAnotherCharacter })
                             </Box>
                         )}
                         {character?.enemies && character.enemies.length > 0 && (
-                            <Box>
-                                <Text my={2}>Enemies:</Text>
+                            <Box my={2}>
+                                <Text>Enemies:</Text>
                                 {character.enemies.map((enemy, index) => (
                                     <Text key={index} color={"gray.500"}>
                                         {enemy}
