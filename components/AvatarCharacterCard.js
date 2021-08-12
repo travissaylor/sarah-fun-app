@@ -72,7 +72,7 @@ export default function AvatarCharacterCard({
                         {character?.gender && (
                             <Text my={2}>
                                 Gender:{" "}
-                                <Text color={"gray.500"}>
+                                <Text as="span" color={"gray.500"}>
                                     {character.gender}
                                 </Text>
                             </Text>
@@ -80,13 +80,13 @@ export default function AvatarCharacterCard({
                         {character?.love && (
                             <Text my={2}>
                                 Love:{" "}
-                                <Text color={"gray.500"}>{character.love}</Text>
+                                <Text as="span" color={"gray.500"}>{character.love}</Text>
                             </Text>
                         )}
                         {character?.weapon && (
                             <Text my={2}>
                                 Weapon:{" "}
-                                <Text color={"gray.500"}>
+                                <Text as="span" color={"gray.500"}>
                                     {character.weapon}
                                 </Text>
                             </Text>
@@ -94,7 +94,7 @@ export default function AvatarCharacterCard({
                         {character?.hair && (
                             <Text my={2}>
                                 Hair:{" "}
-                                <Text color={"gray.500"}>{character.hair}</Text>
+                                <Text as="span" color={"gray.500"}>{character.hair}</Text>
                             </Text>
                         )}
                         {character?.allies && character.allies.length > 0 && (

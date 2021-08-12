@@ -46,14 +46,17 @@ export default function MarvelShows() {
         }, 300)
     }
 
-    useEffect(async () => {
-        const newShows = await fetchShows(10, page)
-        setShows(newShows.data)
-        setPage((prevPage) => prevPage + 1)
-        setTimeout(() => {
-            setLoading(false)
-        }, 300)
-        console.log(newShows)
+    useEffect(() => {
+        const setInitialShows = async () => {
+            const newShows = await fetchShows(10, page)
+            setShows(newShows.data)
+            setPage((prevPage) => prevPage + 1)
+            setTimeout(() => {
+                setLoading(false)
+            }, 300)
+        }
+
+        setInitialShows()
     }, [])
 
     return (

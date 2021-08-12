@@ -32,11 +32,15 @@ export default function Cats() {
         setLoading(false)
     }
 
-    useEffect(async () => {
-        const newCats = await fetchCats(12, page)
-        setPage((prevPage) => prevPage + 1)
-        setCats(newCats)
-        setLoading(false)
+    useEffect(() => {
+        const setInitialCats = async () => {
+            const newCats = await fetchCats(12, page)
+            setPage((prevPage) => prevPage + 1)
+            setCats(newCats)
+            setLoading(false)
+        }
+
+        setInitialCats()
     }, [])
 
     return (

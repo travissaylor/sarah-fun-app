@@ -30,8 +30,12 @@ export default function OfficeEpisodePicker() {
         }, 300)
     }
 
-    useEffect(async () => {
-        await fetchAndSetEpisodeData()
+    useEffect(() => {
+        const setInitialData = async () => {
+            await fetchAndSetEpisodeData()
+        }
+
+        setInitialData()
     }, [])
 
     return (

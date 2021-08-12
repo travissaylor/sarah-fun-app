@@ -46,14 +46,17 @@ export default function MarvelMovies() {
         }, 300)
     }
 
-    useEffect(async () => {
-        const newMovies = await fetchMovies(10, page)
-        setMovies(newMovies.data)
-        setPage((prevPage) => prevPage + 1)
-        setTimeout(() => {
-            setLoading(false)
-        }, 300)
-        console.log(newMovies)
+    useEffect(() => {
+        const setInitialMovies = async () => {
+            const newMovies = await fetchMovies(10, page)
+            setMovies(newMovies.data)
+            setPage((prevPage) => prevPage + 1)
+            setTimeout(() => {
+                setLoading(false)
+            }, 300)
+        }
+
+        setInitialMovies()
     }, [])
 
     return (

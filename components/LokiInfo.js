@@ -33,13 +33,16 @@ export default function LokiInfo() {
         return res.json()
     }
 
-    useEffect(async () => {
-        const newLokiData = await fetchLokiData()
-        setLokiData(newLokiData.data.results[0])
-        console.log(newLokiData)
-        setTimeout(() => {
-            setLoading(false)
-        }, 300)
+    useEffect(() => {
+        const setInitialData = async () => {
+            const newLokiData = await fetchLokiData()
+            setLokiData(newLokiData.data.results[0])
+            setTimeout(() => {
+                setLoading(false)
+            }, 300)
+        }
+
+        setInitialData()
     }, [])
 
     return (
@@ -48,7 +51,9 @@ export default function LokiInfo() {
                 <Heading as="h2" m="2" color="green.400">
                     Loki
                 </Heading>
-                <Text fontSize="lg" color={"gray.500"}>Your Favorite God of Mischief</Text>
+                <Text fontSize="lg" color={"gray.500"}>
+                    Your Favorite God of Mischief
+                </Text>
             </Box>
             {loading || !lokiData ? (
                 <Center>

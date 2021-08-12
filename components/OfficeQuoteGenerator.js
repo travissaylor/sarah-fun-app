@@ -31,8 +31,12 @@ export default function OfficeQuoteGenerator() {
         }, 300)
     }
 
-    useEffect(async () => {
-        await fetchAndSetQuoteData()
+    useEffect(() => {
+        const setInitialData = async () => {
+            await fetchAndSetQuoteData()
+        }
+
+        setInitialData()
     }, [])
 
     return (
@@ -59,7 +63,11 @@ export default function OfficeQuoteGenerator() {
                     </VStack>
                 )}
                 <Container centerContent>
-                    <Button m="8" disabled={loading} onClick={fetchAndSetQuoteData}>
+                    <Button
+                        m="8"
+                        disabled={loading}
+                        onClick={fetchAndSetQuoteData}
+                    >
                         Load Another Quote
                     </Button>
                 </Container>

@@ -35,16 +35,18 @@ export default function AvatarRandomCharacter() {
         setTimeout(() => {
             setLoading(false)
         }, 300)
-        console.log(newCharacter)
     }
 
-    useEffect(async () => {
-        const newCharacter = await fetchCharacter()
-        setCharacter(newCharacter[0])
-        setTimeout(() => {
-            setLoading(false)
-        }, 300)
-        console.log(newCharacter)
+    useEffect(() => {
+        const setInitialCharacter = async () => {
+            const newCharacter = await fetchCharacter()
+            setCharacter(newCharacter[0])
+            setTimeout(() => {
+                setLoading(false)
+            }, 300)
+        }
+
+        setInitialCharacter()
     }, [])
 
     return (
