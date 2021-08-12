@@ -11,6 +11,7 @@ import {
     useColorModeValue,
 } from "@chakra-ui/react"
 import Image from "next/image"
+import AvatarAttribute from "./AvatarAttribute"
 
 export default function AvatarCharacterCard({
     character,
@@ -70,32 +71,28 @@ export default function AvatarCharacterCard({
                     )}
                     <SimpleGrid columns={2}>
                         {character?.gender && (
-                            <Text my={2}>
-                                Gender:{" "}
-                                <Text as="span" color={"gray.500"}>
-                                    {character.gender}
-                                </Text>
-                            </Text>
+                            <AvatarAttribute
+                                name="Gender"
+                                value={character.gender}
+                            />
                         )}
                         {character?.love && (
-                            <Text my={2}>
-                                Love:{" "}
-                                <Text as="span" color={"gray.500"}>{character.love}</Text>
-                            </Text>
+                            <AvatarAttribute
+                                name="Love"
+                                value={character.love}
+                            />
                         )}
                         {character?.weapon && (
-                            <Text my={2}>
-                                Weapon:{" "}
-                                <Text as="span" color={"gray.500"}>
-                                    {character.weapon}
-                                </Text>
-                            </Text>
+                            <AvatarAttribute
+                                name="Weapon"
+                                value={character.weapon}
+                            />
                         )}
                         {character?.hair && (
-                            <Text my={2}>
-                                Hair:{" "}
-                                <Text as="span" color={"gray.500"}>{character.hair}</Text>
-                            </Text>
+                            <AvatarAttribute
+                                name="Hair"
+                                value={character.hair}
+                            />
                         )}
                         {character?.allies && character.allies.length > 0 && (
                             <Box my={2}>
