@@ -5,6 +5,7 @@ import MarvelMovies from "../components/MarvelMovies"
 import { Center, Divider, Link, Text } from "@chakra-ui/react"
 import MarvelShows from "../components/MarvelShows"
 import NextLink from "next/link"
+import KorgRandomQuoteGenerator from "../components/KorgRandomQuoteGenerator"
 
 export default function Marvel() {
     return (
@@ -27,6 +28,8 @@ export default function Marvel() {
             </Center>
 
             <MarvelShows />
+
+            <KorgRandomQuoteGenerator />
         </MainLayout>
     )
 }
