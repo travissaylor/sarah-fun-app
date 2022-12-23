@@ -14,9 +14,9 @@ export default function Marvel() {
             />
 
             <Center mb={8}>
-                <NextLink href="#marvel_movies"><Link fontSize="3xl" mx={2}>Movies</Link></NextLink>
+                <NextLink href="#marvel_movies" legacyBehavior><Link fontSize="3xl" mx={2}>Movies</Link></NextLink>
                 <Text as="span" fontSize="3xl"> |{" "}</Text>
-                <NextLink href="#marvel_shows"><Link fontSize="3xl"  mx={2}>Shows</Link></NextLink>
+                <NextLink href="#marvel_shows" legacyBehavior><Link fontSize="3xl"  mx={2}>Shows</Link></NextLink>
             </Center>
 
             <MarvelMovies />
@@ -27,5 +27,5 @@ export default function Marvel() {
 
             <MarvelShows />
         </MainLayout>
-    )
+    );
 }

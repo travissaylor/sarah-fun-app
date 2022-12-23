@@ -14,7 +14,7 @@ import {
     Heading,
     Text,
 } from "@chakra-ui/react"
-import Image from "next/image"
+import Image from "next/image";
 
 export default function Note({ post, morePosts, preview }) {
     const noteDate = new Date(post.date)
@@ -32,7 +32,7 @@ export default function Note({ post, morePosts, preview }) {
                     <article className="mb-32">
                         <Head>
                             <title>
-                                {post.title} | Next.js Blog Example with{" "}
+                                {post.title} | Sarah&apos;s Happy Place
                             </title>
                             <meta
                                 property="og:image"
@@ -50,9 +50,13 @@ export default function Note({ post, morePosts, preview }) {
                                 {post.coverImage && (
                                     <Image
                                         src={post.coverImage}
-                                        layout={"fill"}
-                                        objectFit="cover"
-                                    />
+                                        alt={post.title}
+                                        priority
+                                        fill
+                                        style={{
+                                            maxWidth: "100%",
+                                            objectFit: "cover"
+                                        }} />
                                 )}
                             </Box>
                         </Container>
@@ -103,7 +107,7 @@ export default function Note({ post, morePosts, preview }) {
                 </>
             )}
         </MainLayout>
-    )
+    );
 }
 
 export async function getStaticProps({ params }) {

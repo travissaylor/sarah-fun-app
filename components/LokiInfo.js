@@ -14,7 +14,7 @@ import {
 import { ImBooks } from "react-icons/im"
 
 import { useEffect, useState } from "react"
-import Image from "next/image"
+import Image from "next/image";
 
 export default function LokiInfo() {
     const [lokiData, setLokiData] = useState()
@@ -63,10 +63,14 @@ export default function LokiInfo() {
                 <VStack>
                     <Image
                         src={`${lokiData.thumbnail.path}.${lokiData.thumbnail.extension}`}
-                        width="300px"
-                        height="300px"
-                        objectFit="cover"
-                    />
+                        alt="loki image"
+                        width={300}
+                        height={300}
+                        style={{
+                            maxWidth: "100%",
+                            height: "300px",
+                            objectFit: "cover"
+                        }} />
                     <Box textAlign="center" m="5">
                         <Heading as="h3" m="5" color="green.400">
                             Series Loki Appears In
@@ -96,5 +100,5 @@ export default function LokiInfo() {
                 </VStack>
             )}
         </Container>
-    )
+    );
 }

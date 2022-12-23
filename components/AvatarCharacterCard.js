@@ -10,7 +10,7 @@ import {
     Text,
     useColorModeValue,
 } from "@chakra-ui/react"
-import Image from "next/image"
+import Image from "next/image";
 import AvatarAttribute from "./AvatarAttribute"
 
 export default function AvatarCharacterCard({
@@ -42,9 +42,12 @@ export default function AvatarCharacterCard({
                     {character?.photoUrl && (
                         <Image
                             src={character.photoUrl}
-                            layout={"fill"}
-                            objectFit="cover"
-                        />
+                            alt="Avatar Image"
+                            fill
+                            style={{
+                                maxWidth: "100%",
+                                objectFit: "cover"
+                            }} />
                     )}
                 </Box>
                 <Flex flex={1} direction="column">
@@ -124,5 +127,5 @@ export default function AvatarCharacterCard({
                 </Flex>
             </Flex>
         </Center>
-    )
+    );
 }

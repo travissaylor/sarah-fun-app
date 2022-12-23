@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/image";
 import {
     Box,
     Center,
@@ -35,9 +35,12 @@ export default function MarvelMovieCard({ movie }) {
                     {movie.cover_url && (
                         <Image
                             src={movie.cover_url}
-                            layout={"fill"}
-                            objectFit="cover"
-                        />
+                            alt={movie.title}
+                            fill
+                            style={{
+                                maxWidth: "100%",
+                                objectFit: "cover"
+                            }} />
                     )}
                 </Box>
                 <Flex flex={1} direction="column">
@@ -79,5 +82,5 @@ export default function MarvelMovieCard({ movie }) {
                 </Flex>
             </Flex>
         </Center>
-    )
+    );
 }

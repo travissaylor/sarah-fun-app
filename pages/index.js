@@ -32,7 +32,7 @@ export default function Home() {
                     />
                 }
                 highlightedButton={
-                    <Link href="/notes">
+                    <Link href="/notes" legacyBehavior>
                         <Button
                             rounded={"full"}
                             px={6}
@@ -55,5 +55,5 @@ export default function Home() {
                 }
             />
         </MainLayout>
-    )
+    );
 }

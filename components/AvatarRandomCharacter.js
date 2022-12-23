@@ -10,7 +10,7 @@ import {
     Text,
     useColorModeValue,
 } from "@chakra-ui/react"
-import Image from "next/image"
+import Image from "next/image";
 import { useEffect, useState } from "react"
 import AvatarCharacterCard from "./AvatarCharacterCard"
 
