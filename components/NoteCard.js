@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import {
     Box,
     Center,
@@ -39,9 +39,11 @@ export default function NoteCard({ note }) {
                     >
                         <Image
                             src={note.coverImage}
-                            layout={"fill"}
-                            objectFit="cover"
-                        />
+                            fill
+                            style={{
+                                maxWidth: "100%",
+                                objectFit: "cover"
+                            }} />
                     </Box>
                 </Link>
                 <Flex flex={1} direction="column">
@@ -91,5 +93,5 @@ export default function NoteCard({ note }) {
                 </Flex>
             </Flex>
         </Center>
-    )
+    );
 }

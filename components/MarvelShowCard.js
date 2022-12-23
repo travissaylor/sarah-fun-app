@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import {
     Box,
     Center,
@@ -34,9 +34,11 @@ export default function MarvelShowCard({ show }) {
                     {show.cover_url && (
                         <Image
                             src={show.cover_url}
-                            layout={"fill"}
-                            objectFit="cover"
-                        />
+                            fill
+                            style={{
+                                maxWidth: "100%",
+                                objectFit: "cover"
+                            }} />
                     )}
                 </Box>
                 <Flex flex={1} direction="column">
@@ -78,5 +80,5 @@ export default function MarvelShowCard({ show }) {
                 </Flex>
             </Flex>
         </Center>
-    )
+    );
 }
