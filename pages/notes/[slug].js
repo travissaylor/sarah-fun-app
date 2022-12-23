@@ -32,7 +32,7 @@ export default function Note({ post, morePosts, preview }) {
                     <article className="mb-32">
                         <Head>
                             <title>
-                                {post.title} | Sarah's Happy Place
+                                {post.title} | Sarah&apos;s Happy Place
                             </title>
                             <meta
                                 property="og:image"

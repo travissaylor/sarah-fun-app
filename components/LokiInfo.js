@@ -63,11 +63,12 @@ export default function LokiInfo() {
                 <VStack>
                     <Image
                         src={`${lokiData.thumbnail.path}.${lokiData.thumbnail.extension}`}
-                        width="300px"
-                        height="300px"
+                        alt="loki image"
+                        width={300}
+                        height={300}
                         style={{
                             maxWidth: "100%",
-                            height: "auto",
+                            height: "300px",
                             objectFit: "cover"
                         }} />
                     <Box textAlign="center" m="5">
