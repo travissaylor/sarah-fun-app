@@ -14,7 +14,7 @@ import {
     Heading,
     Text,
 } from "@chakra-ui/react"
-import Image from "next/image"
+import Image from "next/legacy/image";
 
 export default function Note({ post, morePosts, preview }) {
     const noteDate = new Date(post.date)

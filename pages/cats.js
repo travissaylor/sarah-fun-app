@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/legacy/image";
 import { Button, Center, SimpleGrid, Spinner } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
 import PageHeader from "../components/PageHeader"
