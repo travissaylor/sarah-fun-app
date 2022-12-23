@@ -1,6 +1,30 @@
 module.exports = {
-  reactStrictMode: true,
   images: {
-    domains: ['images.unsplash.com', 'cdn2.thecatapi.com', 'i.annihil.us', 'raw.githubusercontent.com', 'vignette.wikia.nocookie.net'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn2.thecatapi.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.annihil.us',
+      },
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'vignette.wikia.nocookie.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
+    ],
   },
 }
