@@ -14,7 +14,7 @@ import {
 import { ImBooks } from "react-icons/im"
 
 import { useEffect, useState } from "react"
-import Image from "next/image"
+import Image from "next/legacy/image";
 
 export default function LokiInfo() {
     const [lokiData, setLokiData] = useState()

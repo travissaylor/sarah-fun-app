@@ -10,7 +10,7 @@ import {
     Text,
     useColorModeValue,
 } from "@chakra-ui/react"
-import Image from "next/image"
+import Image from "next/legacy/image";
 import AvatarAttribute from "./AvatarAttribute"
 
 export default function AvatarCharacterCard({
