@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image"
 import { Button, Center, SimpleGrid, Spinner } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
 import PageHeader from "../components/PageHeader"
@@ -56,9 +56,14 @@ export default function Cats() {
                         <Image
                             key={index}
                             src={cat.url}
-                            width="250px"
-                            height="250px"
-                            objectFit="cover"
+                            width={250}
+                            height={250}
+                            style={{
+                                maxWidth: "100%",
+                                height: 250,
+                                objectFit: "cover",
+                            }}
+                            alt="cute cat"
                         />
                     ))}
                 </SimpleGrid>

@@ -14,7 +14,7 @@ import {
     Heading,
     Text,
 } from "@chakra-ui/react"
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 export default function Note({ post, morePosts, preview }) {
     const noteDate = new Date(post.date)
@@ -51,8 +51,11 @@ export default function Note({ post, morePosts, preview }) {
                                     <Image
                                         src={post.coverImage}
                                         layout={"fill"}
-                                        objectFit="cover"
-                                    />
+                                        style={{
+                                            maxWidth: "100%",
+                                            height: "auto",
+                                            objectFit: "cover"
+                                        }} />
                                 )}
                             </Box>
                         </Container>
@@ -103,7 +106,7 @@ export default function Note({ post, morePosts, preview }) {
                 </>
             )}
         </MainLayout>
-    )
+    );
 }
 
 export async function getStaticProps({ params }) {
