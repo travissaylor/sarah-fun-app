@@ -1,6 +1,7 @@
 import MainLayout from "../layouts/MainLayout"
 import PageHeader from "../components/PageHeader"
 import AvatarRandomCharacter from "../components/AvatarRandomCharacter"
+import { Center, Text } from "@chakra-ui/react"
 
 export default function Avatar() {
     return (
@@ -10,7 +11,8 @@ export default function Avatar() {
                 description="Get your Marvel fix here!"
             />
 
-            <AvatarRandomCharacter />
+            {/* <AvatarRandomCharacter /> */}
+            <Center><Text>This page needs some love. It will be back shortly!</Text></Center>
         </MainLayout>
     )
 }
