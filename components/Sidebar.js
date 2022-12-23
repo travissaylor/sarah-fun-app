@@ -82,7 +82,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
 
 const NavItem = ({ link, icon, children, ...rest }) => {
     return (
-        <Link href={link} style={{ textDecoration: "none" }}>
+        <Link href={link} style={{ textDecoration: "none" }} legacyBehavior>
             <Flex
                 align="center"
                 p="4"
@@ -109,7 +109,7 @@ const NavItem = ({ link, icon, children, ...rest }) => {
                 {children}
             </Flex>
         </Link>
-    )
+    );
 }
 
 const MobileNav = ({ onOpen, ...rest }) => {

@@ -35,6 +35,7 @@ export default function MarvelMovieCard({ movie }) {
                     {movie.cover_url && (
                         <Image
                             src={movie.cover_url}
+                            alt={movie.title}
                             fill
                             style={{
                                 maxWidth: "100%",

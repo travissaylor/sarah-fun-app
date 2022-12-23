@@ -27,7 +27,7 @@ export default function NoteCard({ note }) {
                 flexDir="column"
                 justifyContent="space-between"
             >
-                <Link href={`/notes/${note.slug}`}>
+                <Link href={`/notes/${note.slug}`} legacyBehavior>
                     <Box
                         h={"210px"}
                         bg={"gray.100"}
@@ -39,6 +39,7 @@ export default function NoteCard({ note }) {
                     >
                         <Image
                             src={note.coverImage}
+                            alt={note.title}
                             fill
                             style={{
                                 maxWidth: "100%",
@@ -56,7 +57,7 @@ export default function NoteCard({ note }) {
                     >
                         {note.tag}
                     </Text>
-                    <Link href={`/notes/${note.slug}`}>
+                    <Link href={`/notes/${note.slug}`} legacyBehavior>
                         <Heading
                             color={useColorModeValue("gray.700", "white")}
                             fontSize={"2xl"}

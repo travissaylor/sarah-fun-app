@@ -32,7 +32,7 @@ export default function Note({ post, morePosts, preview }) {
                     <article className="mb-32">
                         <Head>
                             <title>
-                                {post.title} | Next.js Blog Example with{" "}
+                                {post.title} | Sarah's Happy Place
                             </title>
                             <meta
                                 property="og:image"
@@ -50,10 +50,11 @@ export default function Note({ post, morePosts, preview }) {
                                 {post.coverImage && (
                                     <Image
                                         src={post.coverImage}
-                                        layout={"fill"}
+                                        alt={post.title}
+                                        priority
+                                        fill
                                         style={{
                                             maxWidth: "100%",
-                                            height: "auto",
                                             objectFit: "cover"
                                         }} />
                                 )}

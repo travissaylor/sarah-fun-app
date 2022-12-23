@@ -34,6 +34,7 @@ export default function MarvelShowCard({ show }) {
                     {show.cover_url && (
                         <Image
                             src={show.cover_url}
+                            alt={show.title}
                             fill
                             style={{
                                 maxWidth: "100%",
