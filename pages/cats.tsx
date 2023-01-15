@@ -3,6 +3,7 @@ import { Button, Center, SimpleGrid, Spinner } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
 import PageHeader from "../components/PageHeader"
 import MainLayout from "../layouts/MainLayout"
+import { getCats } from "../lib/cats/service"
 
 export default function Cats() {
     const [cats, setCats] = useState([])
@@ -10,6 +11,7 @@ export default function Cats() {
     const [loading, setLoading] = useState(true)
 
     const fetchCats = async (limit = 12, page = 0) => {
+        const catsRes = await getCats();
         const apiKey = process.env.NEXT_PUBLIC_CATS_API_KEY
         const url = new URL("https://api.thecatapi.com/v1/images/search")
         url.searchParams.set("limit", limit.toString())
