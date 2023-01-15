@@ -11,8 +11,7 @@ export default function Avatar() {
                 description="Get your Marvel fix here!"
             />
 
-            {/* <AvatarRandomCharacter /> */}
-            <Center><Text>This page needs some love. It will be back shortly!</Text></Center>
+            <AvatarRandomCharacter />
         </MainLayout>
     )
 }

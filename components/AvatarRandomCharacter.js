@@ -10,7 +10,7 @@ import {
     Text,
     useColorModeValue,
 } from "@chakra-ui/react"
-import Image from "next/image";
+import Image from "next/image"
 import { useEffect, useState } from "react"
 import AvatarCharacterCard from "./AvatarCharacterCard"
 
@@ -18,12 +18,14 @@ export default function AvatarRandomCharacter() {
     const [character, setCharacter] = useState()
     const [loading, setLoading] = useState(true)
 
-    const fetchCharacter = async () => {
-        const url = new URL(
-            "https://last-airbender-api.herokuapp.com/api/v1/characters/random"
-        )
+    const fetchCharacter = async (count = 1) => {
+        const baseUrl = "https://avatar-universe-api.saylordevelopment.com";
+        const url = new URL(`${baseUrl}/v1/characters/random`)
+        url.searchParams.append("count", count)
 
-        const res = await fetch(url)
+        console.log("url", url.toString())
+
+        const res = await fetch(url.toString())
 
         return await res.json()
     }
